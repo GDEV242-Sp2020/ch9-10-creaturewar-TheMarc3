@@ -1,22 +1,41 @@
-
 /**
  * Write a description of class Creature here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Marc Weitze 
+ * @version 4/13/2020
  */
 public class Creature
 {
-   private int hp;
-   private int strength;
-   
-   public Creature(){
-       
-   }
+    // instance variables
+    private int hp = 10;
+    private int str = 10;
     
-   public int damage(){
-       //TODO: change this
-       return 0;
+
+
+    public Creature()
+    {
+        
     }
     
+    public Creature(int hitPoints, int strength)
+    {
+        hp = hitPoints;
+        str = strength;
+    }
+    
+    public int damage()
+    {
+        int rando = 1;
+        rando += Rand.nextInt(str);
+        return rando;
+    }
+   
+    public boolean isAlive()
+    {
+       if(hp > 0)
+       {
+           return true;
+       }
+       return false;
+    }
 }
